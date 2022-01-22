@@ -27,6 +27,9 @@ public class Main {
         if(n<=1){
             return dp[n]=n;
         }
+           if(dp[n] != -1){
+        return dp[n];
+    }
         int nm1=fiboM(n-1,dp);
         int nm2=fiboM(n-2,dp);
         
