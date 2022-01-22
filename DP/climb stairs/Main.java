@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
     
-       public void display(int [] arr){  // display ke liye likha h
+       public static void display(int [] arr){  // display ke liye likha h
     for(int e : arr)
         System.out.print(e + " ");
     System.out.println();
@@ -92,6 +92,7 @@ public class Main {
         // int ans= climbStairM(n,dp);
         // tabulation ke liye 
         int ans= climbStairT(n,dp);
+        // display(dp);
         
         System.out.println(ans);
     }
