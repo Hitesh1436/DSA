@@ -70,7 +70,7 @@ public class Main {
         }
         
         int ans=0;
-        for(int i=0;i<n;i++){  // isla kam h first column mn se max hoga usse ans dega
+        for(int i=0;i<n;i++){  // iska kam h first column mn se max hoga usse ans dega
             if(dp[i][0]>ans)
                 ans= dp[i][0];
         }
@@ -93,7 +93,7 @@ public class Main {
         // for(int i=0;i<n;i++){
         //     int tmpAns = goldMine(i,0,grid,dp);
         //     if(tmpAns>ans){
-        //         ans = tmpAns;
+        //         ans = tmpAns;    
         //     }
         // }
         
