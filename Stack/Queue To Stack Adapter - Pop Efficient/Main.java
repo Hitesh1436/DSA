@@ -11,17 +11,19 @@ public class Main {
       mainQ = new ArrayDeque<>();
       helperQ = new ArrayDeque<>();
     }
-    
-    //Interfaces
-    // Queue<Integer> qu = new linkedList<>();
-    // List<Integer> ans = new ArrayList<>();
 
     int size() {
       return mainQ.size();
     }
 
     void push(int val) {
+      while(mainQ.size()!=0){
+          helperQ.add(mainQ.remove());
+      }
       mainQ.add(val);
+      while(helperQ.size()!=0){
+          mainQ.add(helperQ.remove());
+      }
     }
 
     int pop() {
@@ -29,17 +31,7 @@ public class Main {
           System.out.println("Stack underflow");
           return -1;
       }else{
-          while(mainQ.size()!=1){
-              helperQ.add(mainQ.remove());
-          }
-          int val = mainQ.remove();
-          
-          // interchange 
-          Queue<Integer> temp = mainQ;
-          mainQ = helperQ;
-          helperQ = temp;
-          
-          return val;
+          return mainQ.remove();
       }
     }
 
@@ -48,22 +40,7 @@ public class Main {
           System.out.println("Stack underflow");
           return -1;
       }else{
-          while(mainQ.size()!=1){
-              helperQ.add(mainQ.remove());
-          }
-          int val = mainQ.remove();
-          
-          // interchange 
-        //   Queue<Integer> temp = mainQ;
-        //   mainQ = helperQ;
-        //   helperQ = temp;
-        
-        // value replace 
-        while(helperQ.size()!=0){
-            mainQ.add(helperQ.remove());
-        }
-          mainQ.add(val);
-          return val;
+          return mainQ.peek();
       }
     }
   }
