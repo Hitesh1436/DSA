@@ -1,4 +1,4 @@
-Important h toh revision krna jruri h iska nd acha qstn h 
+// Important h toh revision krna jruri h iska nd acha qstn h 
 
 import java.io.*;
 import java.util.*;
