@@ -56,27 +56,36 @@ public class Main{
         }
     }
     // next line mn print krya h null use krke
-    public static void levelOrder_null(Node root){
+    public static void levelOrderNULL_Method(Node root){
         Queue<Node> qu = new LinkedList<>();
-        // 1. seeding root
-        qu.add(root);
-
-        while(qu.size()>0){
-            //1. Remove
-            Node rem = qu.remove();
-
-            // 2. Work kro ab
-            System.out.print(rem.val + " ");
-
-            //3. Add all children if possible mtlb agr dono h toh dono vrna jo h usse add krdenge
-            if(rem.left!=null){
-                qu.add(rem.left);
-            }
-            if(rem.right!=null){
-                qu.add(rem.right);
-            }
+                //seeding
+                qu.add(root);
+                qu.add(null);
+    
+                while(qu.size() > 0 ){
+                    if(qu.size() == 1 && qu.peek() == null){
+                        break;
+                    }
+                    //1. remove
+                    Node rem = qu.remove();
+                    if(rem == null){
+                        qu.add(null);
+                        System.out.println();
+                    }
+                    else{
+                        System.out.print(rem.val + " ");
+    
+                        //3. Add all child If possible
+                        if(rem.left != null){
+                            qu.add(rem.left);
+                        }
+                        if(rem.right != null){
+                            qu.add(rem.right);
+                        }
+                    }
+                    
+                }
         }
-    }
 
     public static void levelOrder3(Node root){
         Queue<Node> qu = new LinkedList<>();
@@ -166,7 +175,7 @@ public class Main{
             
             // display(root);
             // levelOrder(root);
-            // levelOrder_null(root);
+            // levelOrderNULL_Method(root);
             levelOrder3(root);
             
 
