@@ -78,7 +78,6 @@ public class Main {
     display(node.left);
     display(node.right);
   }
-  // approach 1
   static boolean isBal = true;
   public static int isBalance(Node node){
     if(node == null){
@@ -92,29 +91,8 @@ public class Main {
         isBal = false;
     }
     int th = Math.max(lh,rh)+1;
-    return th;  
-  }
-  // approach 2
-  static class balPair {
-    int h;
-    boolean isBal;
-  }
-  
-  public static balPair isBal(Node node){
-      if(node == null){
-          balPair base = new balPair();
-          base.h = 0;
-          base.isBal = true;
-          return base;
-      }
-      balPair lp = isBal(node.left);
-      balPair rp = isBal(node.right);
-      
-      balPair my = new balPair();
-      my.isBal = Math.abs(lp.h-rp.h)<=1 && lp.isBal && rp.isBal;
-      
-      my.h = Math.max(lp.h,rp.h)+1;
-      return my;
+    return th;
+    
   }
   
   public static void main(String[] args) throws Exception {
@@ -133,11 +111,8 @@ public class Main {
     Node root = construct(arr);
     
     
-    // isBalance(root);
-    // System.out.println(isBal);
-    
-    balPair ans = isBal(root);
-    System.out.println(ans.isBal);
+    isBalance(root);
+    System.out.println(isBal);
     
   }
 
