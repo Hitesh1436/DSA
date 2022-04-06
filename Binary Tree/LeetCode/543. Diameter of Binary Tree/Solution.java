@@ -44,7 +44,7 @@ class Solution {
     }
 }
 
-// Approach 2 -> pair bnkr kia h ki t=return hum apne according kr ske
+// Approach 2 -> pair bnkr kia h taki return hum apne according kr ske
 
 class Solution {
     
