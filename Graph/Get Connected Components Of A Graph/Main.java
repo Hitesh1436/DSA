@@ -58,7 +58,7 @@ public class Main {
 
       ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
 
-      gcc(graph,comps);  // gcc ko call kia h 
+      gcc(graph,comps);              // gcc ko call kia h 
 
       System.out.println(comps);    // print krdia comps ko
    }
