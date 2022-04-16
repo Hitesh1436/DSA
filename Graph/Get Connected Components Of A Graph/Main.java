@@ -13,7 +13,7 @@ public class Main {
          this.wt = wt;
       }
    }
-   
+
    public static void getSingleComp(ArrayList<Edge> [] graph, int src , boolean[]vis , ArrayList<Integer>single){
        single.add(src);  // src ko blank Al mn add krdia jse phle 0 krdia 
       vis[src] = true;      // vis vli array mn 0 ko true mnark krdia
@@ -24,7 +24,7 @@ public class Main {
           }
       }
    }
-   
+
    public static void gcc(ArrayList<Edge> [] graph,ArrayList<ArrayList<Integer>> comps){  
        boolean [] vis = new boolean[graph.length];  // vis array bnai tki visited ko mark krdo 
        for(int i=0;i<graph.length;i++){
@@ -57,9 +57,74 @@ public class Main {
       }
 
       ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
-      
-      gcc(graph,comps);
 
-      System.out.println(comps);
+      gcc(graph,comps);  // gcc ko call kia h 
+
+      System.out.println(comps);    // print krdia comps ko
    }
 }
+
+// Approach 2
+
+// import java.io.*;
+// import java.util.*;
+
+// public class Main {
+//    static class Edge {
+//       int src;
+//       int nbr;
+//       int wt;
+
+//       Edge(int src, int nbr, int wt) {
+//          this.src = src;
+//          this.nbr = nbr;
+//          this.wt = wt;
+//       }
+//    }
+
+//    public static void main(String[] args) throws Exception {
+//       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+//       int vtces = Integer.parseInt(br.readLine());
+//       ArrayList<Edge>[] graph = new ArrayList[vtces];
+//       for (int i = 0; i < vtces; i++) {
+//          graph[i] = new ArrayList<>();
+//       }
+
+//       int edges = Integer.parseInt(br.readLine());
+//       for (int i = 0; i < edges; i++) {
+//          String[] parts = br.readLine().split(" ");
+//          int v1 = Integer.parseInt(parts[0]);
+//          int v2 = Integer.parseInt(parts[1]);
+//          int wt = Integer.parseInt(parts[2]);
+//          graph[v1].add(new Edge(v1, v2, wt));
+//          graph[v2].add(new Edge(v2, v1, wt));
+//       }
+
+//       ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
+      
+//       // write your code here
+//       boolean [] vis = new boolean[vtces];
+//       for(int v = 0 ; v < vtces ; v++){
+//         if(vis[v] == false){
+//             ArrayList<Integer> component = new ArrayList<>();
+//             drawTreeAndGenerateComp(graph , v , component , vis);
+//             comps.add(component);
+//         }  
+//       }
+
+//       System.out.println(comps);
+
+//    public static void drawTreeAndGenerateComp(ArrayList<Edge>[] graph, int src, ArrayList<Integer> component, boolean[] vis) {
+//       vis[src] = true;
+//       comps.add(src);
+//       for (Edge e : graph[src]) {
+//          int nbr = e.nbr;
+//          if (!vis[nbr]) {
+//             drawTreeAndGenerateComp(graph, nbr, component, vis);
+//          }
+
+//       }
+
+//    }
+// }
