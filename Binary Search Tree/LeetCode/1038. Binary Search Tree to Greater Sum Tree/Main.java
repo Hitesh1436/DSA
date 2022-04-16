@@ -34,3 +34,23 @@ class Solution {
     }    
 
 }
+
+// Approach 2
+class Solution {
+    
+    int sum =0;
+    
+    public void traversal(TreeNode root){
+        if(root == null){
+            return;
+        }
+        traversal(root.right);
+        sum = sum + root.val;
+        root.val = sum;
+        traversal(root.left);
+    }
+    public TreeNode bstToGst(TreeNode root) {
+        traversal(root);
+        return root;
+    }
+}
