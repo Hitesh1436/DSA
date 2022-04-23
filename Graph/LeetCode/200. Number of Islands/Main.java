@@ -1,5 +1,4 @@
 class Solution {
-    
     static int [][] dir = {{1,0},{0,1}, {-1,0}, {0,-1}};
     public void dfs(char [][] grid, int i, int j){
         grid[i][j] = '0';
@@ -10,9 +9,7 @@ class Solution {
             
             if(r < grid.length && r >= 0 &&  c < grid[0].length && c >= 0 && grid[r][c] == '1')
                 dfs(grid, r, c);
-        }
-        
-        
+        }   
     }
     public int numIslands(char[][] grid) {
         int n = grid.length;
