@@ -32,7 +32,7 @@ public class Main {
         int n = graph.length;
 
         PriorityQueue<dp> pq = new PriorityQueue<>((a,b)->{   // lambda function h yeh ()->
-            return a.wsf-b.wsf;    // increasing order on the basis of wsf
+            return a.wsf-b.wsf;        // increasing order on the basis of wsf
         });
         
         boolean [] vis = new boolean[n];
